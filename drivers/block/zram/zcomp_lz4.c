@@ -31,7 +31,7 @@ static void *zcomp_lz4_create(void)
 					__GFP_NOWARN);
 	if (!ret)
 		ret = __vmalloc(LZ4_MEM_COMPRESS,
-				flags | __GFP_ZERO | __GFP_HIGHMEM,
+				flags | __GFP_HIGHMEM,
 				PAGE_KERNEL);
 	return ret;
 }
