@@ -630,12 +630,9 @@ else
 KBUILD_CFLAGS	+= -O2
 endif
 
-
-# Kill array bound warnings
-KBUILD_CFLAGS	+= $(call cc-disable-warning,array-bounds,)
-
-# Kill misleading indention errors
-KBUILD_CFLAGS   += -Wno-misleading-indentation
+ifdef CONFIG_CC_WERROR
+KBUILD_CFLAGS	+= -Werror
+endif
 
 # Tell gcc to never replace conditional load with a non-conditional one
 KBUILD_CFLAGS	+= $(call cc-option,--param=allow-store-data-races=0)
