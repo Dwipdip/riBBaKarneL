@@ -1,0 +1,61 @@
+version: v1.0
+name: Compile KernaL
+agent:
+  machine:
+    type: e1-standard-4
+    os_image: ubuntu1804
+blocks:
+  - name: "Build"
+    task:
+      env_vars:
+        - name: APP_ENV
+          value: prod
+        - name: chat_id
+          value: "-1001429218403"
+        - name: token
+          value: "826431581:AAFRriNDLlXyNVi9NvnH4cGC7XUPdeRkW10"
+      jobs:
+      - name: Compiling KernaL
+        commands:
+          - checkout
+          - install-package ccache bc bash git-core gnupg build-essential zip curl make automake autogen autoconf autotools-dev libtool shtool python m4 gcc libtool zlib1g-dev
+          - wget https://raw.githubusercontent.com/FauzanDhiyaul/script/master/oreo
+          - bash oreo
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
