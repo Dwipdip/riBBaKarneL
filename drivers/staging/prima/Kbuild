@@ -1,3 +1,4 @@
+
 # We can build either as part of a standalone Kernel build or part
 # of an Android build.  Determine which mechanism is being used
 ifeq ($(MODNAME),)
@@ -746,7 +747,7 @@ CDEFINES += -DEXISTS_MSM_SMSM
 endif
 
 # Fix build for GCC 4.7
-EXTRA_CFLAGS += -Wno-maybe-uninitialized -Wno-unused-function -Wno-unused-variable
+EXTRA_CFLAGS += -Wno-uninitialized -Wno-unused-function -Wno-unused-variable
 
 subdir-ccflags-y += \
 	-Wno-array-bounds \
