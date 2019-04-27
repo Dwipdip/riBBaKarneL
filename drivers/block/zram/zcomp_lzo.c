@@ -31,7 +31,8 @@ static void *lzo_create(void)
 					__GFP_NOWARN);
 	if (!ret)
 		ret = __vmalloc(LZO1X_MEM_COMPRESS,
-				flags | __GFP_ZERO | __GFP_HIGHMEM,
+				GFP_NOIO | __GFP_NORETRY | __GFP_NOWARN |
+				__GFP_ZERO | __GFP_HIGHMEM,
 				PAGE_KERNEL);
 	return ret;
 }
